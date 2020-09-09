@@ -42,16 +42,8 @@ def saveinr(vol, h, fname):
     fid.write(header.encode("ascii"))
     fid.write(vol.tobytes(order="F"))
 
-base_filepath = './PROCESSED/'
-save_filepath = './PROCESSED_INR/'
-files = [f for f in listdir(base_filepath) if isfile(join(base_filepath, f))]
+base_filepath = './'
+filename = 'test_aligned.tiff'
 
-for F in files:
-    img = imread(base_filepath + F).astype(np.uint8).astype(np.float32)
-    fname, fextension = splitext( F)
-    saveinr( img, [1.0]*3, save_filepath + fname + '.inr')
-
-
-# input_segmentation = imread("./FEM/cmeshgen/testmeshgeneration1/data/labelmap.tif").astype(np.uint8)
-# input_segmentation = imread("./Segmentation-label.tiff").astype(np.uint8).astype(np.float32)
-# saveinr(input_segmentation, [1.0]*3, 'test_fat_gauss.inr')
+image = imread( base_filepath + filename )
+saveinr( image, [1.0]*3, 'test_aligned.inr')
