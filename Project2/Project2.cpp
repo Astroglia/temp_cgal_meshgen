@@ -1,3 +1,5 @@
+#define CGAL_MESH_3_VERBOSE
+
 // volume mesh generation imports
 #include <CGAL/Exact_predicates_inexact_constructions_kernel.h>
 #include <CGAL/Mesh_triangulation_3.h>
@@ -26,7 +28,7 @@ using namespace CGAL::parameters; //for facet size, facet distance, etc.
 
 int main(int argc, char* argv[])
 {
-    const char* inputfilepath = "...";
+    const char* inputfilepath = "C:\\Users\\markus\\source\\repos\\Project2\\test_aligned.inr";
     CGAL::Image_3 image;
     image.read(inputfilepath);
 
